@@ -11,7 +11,7 @@ Tamamen **yerelde (local-first)** çalışan, bulut API'sine ihtiyaç duymayan b
 | Özellik | Açıklama |
 |---|---|
 | 👤 **Diyet Profili** | Yaş, boy, kilo, BMI ve kronik rahatsızlık bilgisini kaydeder; sonraki oturumlarda tekrar kullanılır. |
-| 💬 **Diyet Asistanı (RAG)** | Kullanıcının sorusuna göre ilgili dokümanları (tip 1/tip 2 diyabet, Akdeniz diyeti vb.) ChromaDB üzerinden bulur, profile özel ve kaynağa dayalı cevap üretir. |
+| 💬 **Diyet Asistanı (RAG)** | Kullanıcının sorusuna göre ilgili dokümanları (tip 1/tip 2 diyabet, PKOS, Akdeniz diyeti vb.) ChromaDB üzerinden bulur, profile özel ve kaynağa dayalı cevap üretir. |
 | 📸 **Öğün Analizi** | Yüklenen öğün fotoğrafını görsel-dil (vision) modeliyle analiz eder, kullanıcının profiline göre uygunluğunu değerlendirir. |
 | 📅 **Görev Planlayıcı** | Rastgele sırada girilen görevleri, aralarındaki bağımlılık/eş zamanlılık ilişkisini çıkararak gerçekçi bir zaman planına dönüştürür. |
 
@@ -50,7 +50,6 @@ Tüm modeller [Foundry Local](https://github.com/microsoft/Foundry-Local) ile ci
 ├── app.py                  # Streamlit ana uygulama (tüm sayfalar)
 ├── ingest.py                # Genel doküman -> ChromaDB ingest script'i (documents/ klasörü)
 ├── query.py                 # Bağımsız CLI RAG sorgu aracı
-├── test.py                  # Foundry Local SDK kullanım örneği
 ├── requirements.txt
 ├── documents/
 │   └── diyet/                # Diyet Asistanı'nın kullandığı kaynak dokümanlar (PDF/DOCX/TXT)
@@ -142,7 +141,7 @@ A **fully local-first** personal assistant application that requires no cloud AP
 | Feature | Description |
 |---|---|
 | 👤 **Diet Profile** | Stores age, height, weight, BMI, and chronic condition info; reused across sessions. |
-| 💬 **Diet Assistant (RAG)** | Finds relevant documents (type 1/type 2 diabetes, Mediterranean diet, etc.) via ChromaDB based on the user's question, producing profile-specific, source-grounded answers. |
+| 💬 **Diet Assistant (RAG)** | Finds relevant documents (type 1/type 2 diabetes, PCOS, Mediterranean diet, etc.) via ChromaDB based on the user's question, producing profile-specific, source-grounded answers. |
 | 📸 **Meal Analysis** | Analyzes an uploaded meal photo with a vision-language model and evaluates its suitability based on the user's profile. |
 | 📅 **Task Planner** | Turns tasks entered in random order into a realistic time plan by inferring dependency/parallelism relationships between them. |
 
@@ -181,7 +180,6 @@ All models are downloaded and run on-device via [Foundry Local](https://github.c
 ├── app.py                  # Main Streamlit application (all pages)
 ├── ingest.py                # Generic document -> ChromaDB ingest script (documents/ folder)
 ├── query.py                 # Standalone CLI RAG query tool
-├── test.py                  # Foundry Local SDK usage example
 ├── requirements.txt
 ├── documents/
 │   └── diyet/                # Source documents used by the Diet Assistant (PDF/DOCX/TXT)
